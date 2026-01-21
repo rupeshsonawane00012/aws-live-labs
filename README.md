@@ -123,4 +123,4 @@ Troubleshooting AWS connectivity issues
 
 # Author
 Rupesh Gorakhnath Sonawane
-B.Tech CSE | Cloud & DevOps Enthusiast
+B.Tech CSE | 
