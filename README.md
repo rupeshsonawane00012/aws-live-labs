@@ -99,10 +99,10 @@ Private communication only
 # Cleanup (Cost Optimization)
 
 After testing:
-Terminated EC2 instances
-Deleted VPC peering connection
-Removed subnets and VPCs
-Released Elastic IPs
+Terminated EC2 instances |
+Deleted VPC peering connection|
+Removed subnets and VPCs|
+Released Elastic IPs|
 
  Ensured zero unexpected AWS costs
 
