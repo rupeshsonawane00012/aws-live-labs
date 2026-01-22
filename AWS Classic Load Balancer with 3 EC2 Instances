@@ -1,0 +1,87 @@
+#Project Overview
+This project demonstrates how to use an AWS Classic Load Balancer (CLB) to distribute incoming HTTP traffic across three EC2 instances, providing high availability and fault tolerance.
+ 
+#Architecture Overview
+User
+ ↓
+Classic Load Balancer (DNS)
+ ↓
+EC2 Instance 1   EC2 Instance 2   EC2 Instance 3
+
+#Key Concepts Covered
+Classic Load Balancer (CLB)
+Instance-level load balancing
+Health checks
+High availability
+EC2 User Data automation
+
+#⚙️ Implementation Steps (FIXED & CLEAR)
+1️⃣ Launch THREE EC2 Instances
+Launch 3 EC2 instances with the same configuration.
+Common configuration:
+AMI: Ubuntu / Amazon Linux
+Instance type: t2.micro
+Network: Same VPC
+Subnet: Public subnet
+Auto-assign public IP: Enabled
+Security Group:
+HTTP (80) → 0.0.0.0/0
+SSH (22) → Your IP
+
+2️⃣ Configure Web Server Using User Data
+Use the same user data script for all 3 instances:
+
+#!/bin/bash
+apt update -y
+apt install nginx -y
+systemctl start nginx
+systemctl enable nginx
+echo "this is test server $HOSTNAME" > /var/www/html/index.html
+
+
+This ensures:
+Nginx installs automatically
+Each instance shows its unique hostname
+
+3️⃣ Verify EC2 Instances
+Confirm all 3 EC2 instances are running
+Access each instance via its public IP
+You should see different hostnames on each instance
+
+4️⃣ Create Classic Load Balancer
+
+Load Balancer type: Classic Load Balancer
+Listener: HTTP (80)
+Availability Zones: Select AZs where EC2s are running
+Register all 3 EC2 instances
+Enable health checks
+
+5️⃣ Test Load Balancing
+Open the CLB DNS name in browser
+Refresh the page multiple times
+Observe responses rotating between 3 different hostnames
+✔ Confirms load balancing is working.
+
+#Health Check Validation
+Navigate to Load Balancer → Instances
+All 3 instances should show InService
+Stop one EC2 → traffic rotates between remaining instances
+Restart → instance returns to service
+
+#Cleanup
+
+Delete Classic Load Balancer
+Terminate all 3 EC2 instances
+Verify no unused Elastic IPs
+
+🎯 What I Learned
+
+How Classic Load Balancer distributes traffic
+Importance of health checks
+Why EC2 instances should be treated as disposable
+Fundamentals of high availability in AWS
+
+📌 Author
+
+Rupesh Gorakhnath Sonawane
+B.Tech CSE | 
