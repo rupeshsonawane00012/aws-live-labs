@@ -49,3 +49,9 @@ sudo nano index.html
 I opened the browser and entered the public IP address of the EC2 instance.
 
 The static website was successfully displayed using Nginx.
+---
+
+## Website Output Screenshot
+
+![EC2 Static Website Output](../ec2-nginx-output.png)
+
