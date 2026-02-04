@@ -1,0 +1,51 @@
+# Static Website Hosting on AWS EC2 using Nginx
+
+## About this Practical
+In this practical, I hosted a static website on an AWS EC2 instance using the Nginx web server.  
+I launched an EC2 instance, installed Nginx, deployed my HTML file, and accessed the website using the public IP of the instance.
+
+---
+
+## Steps I Followed
+
+### 1. Launched EC2 Instance
+- I launched an EC2 instance using Amazon Ubuntu.
+- Instance type: t3.micro (Free Tier).
+- I allowed SSH (22) and HTTP (80) in the security group.
+
+
+---
+
+### 2. Connected to EC2
+I connected to the instance using SSH from my local machine.
+
+```bash
+ssh -i key.pem ubuntu@<public-ip>
+
+###3. Installed Nginx
+
+After connecting to the instance, I installed Nginx using the package manager.
+
+sudo apt update
+sudo apt install nginx -y
+
+
+Then I started and enabled the Nginx service.
+
+sudo systemctl start nginx
+sudo systemctl enable nginx
+
+#$$4. Deployed the Website
+
+I navigated to the Nginx web root directory.
+
+I created an index.html file for my static website.
+
+cd /var/www/html
+sudo nano index.html
+
+##Verified the Website
+
+I opened the browser and entered the public IP address of the EC2 instance.
+
+The static website was successfully displayed using Nginx.
