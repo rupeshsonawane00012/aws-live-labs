@@ -53,7 +53,12 @@ The static website was successfully displayed using Nginx.
 
 ## Website Output Screenshot
 
-![Website Output](ec2-nginx-output.png.png)
+---
+
+## Website Output Screenshot
+
+![EC2 Static Website Output](https://raw.githubusercontent.com/rupeshsonawane00012/aws-live-labs/refs/heads/main/ec2-nginx-output.png.png)
+
 
 
 
