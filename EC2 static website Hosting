@@ -53,5 +53,6 @@ The static website was successfully displayed using Nginx.
 
 ## Website Output Screenshot
 
-![EC2 Static Website Output](../Screenshot 2026-02-05 012903.png)
+![Website Output](ec2-nginx-output.png)
+
 
