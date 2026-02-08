@@ -29,6 +29,16 @@ with proper validation and testing.
 📁 Folder: `aws-vpc-peering-lab`
 
 ---
+## Skills Demonstrated
+
+- AWS VPC Networking
+- EC2 Provisioning & Configuration
+- Linux Server Administration
+- Nginx Web Hosting
+- Load Balancer Configuration
+- High Availability Design
+- Troubleshooting & Debugging
+
 
 ## 🧰 Tools & Services Used
 - Amazon EC2
